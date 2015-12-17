@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/view_pager"
+        android:layout_width="match_parent"
+        android:paddingBottom="45dp"
+        android:layout_height="match_parent"/>
+
+    <RadioGroup
+        android:id="@id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_menu_bar"
+        android:background="@color/app_theme"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@id/word_list_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:textColor="@color/selector_bottom_menu"
+            android:gravity="center"
+            android:text="@string/bottom_menu_word"/>
+
+         <RadioButton
+             android:id="@id/translation_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@color/selector_bottom_menu"
+            android:gravity="center"
+            android:text="@string/bottom_menu_translation"/>
+
+         <RadioButton
+             android:id="@id/sentence_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:textColor="@color/selector_bottom_menu"
+            android:gravity="center"
+            android:text="@string/bottom_menu_sentence"/>
+
+         <RadioButton
+             android:id="@id/video_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:textColor="@color/selector_bottom_menu"
+            android:gravity="center"
+            android:text="@string/bottom_menu_video"/>
+
+    </RadioGroup>
+
+</RelativeLayout>

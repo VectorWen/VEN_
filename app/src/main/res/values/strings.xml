@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">VEN</string>
+
+    <!-- 主界面-->
+    <string name="bottom_menu_word">单词本</string>
+    <string name="bottom_menu_translation">翻译</string>
+    <string name="bottom_menu_sentence">句子</string>
+    <string name="bottom_menu_video">视频</string>
+
+
+
+</resources>

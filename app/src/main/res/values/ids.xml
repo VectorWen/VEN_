@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  主界面 -->
+    <item name="view_pager" type="id"/>
+    <item name="radio_group" type="id"/>
+    <item name="word_list_btn" type="id"/>
+    <item name="translation_btn" type="id"/>
+    <item name="sentence_btn" type="id"/>
+    <item name="video_btn" type="id"/>
+</resources>
