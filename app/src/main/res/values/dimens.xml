@@ -9,6 +9,25 @@
     <dimen name="bottom_menu_bar">50dp</dimen>
     <dimen name="sub_title_bar">45dp</dimen>
 
+    <!-- base -->
+    <dimen name="xx_small">8sp</dimen>
+    <dimen name="x_small">12sp</dimen>
+    <dimen name="small">14sp</dimen>
+    <dimen name="normal">16sp</dimen>
+    <dimen name="large">18sp</dimen>
+    <dimen name="x_large">24sp</dimen>
+    <dimen name="xx_large">28sp</dimen>
+    <dimen name="xxx_large">36sp</dimen>
+
+    <!-- padding margin 需要设在padding，margin 的时候使用下面尺寸-->
+    <dimen name="separation_x_small">3dp</dimen>
+    <dimen name="separation_small">4dp</dimen>
+    <dimen name="separation_normal">8dp</dimen>
+    <dimen name="separation_large">10dp</dimen>
+    <dimen name="separation_x_large">15dp</dimen>
+    <dimen name="separation_xx_large">20dp</dimen>
+    <dimen name="separation_xxx_large">30dp</dimen>
+
     <!-- 主界面 -->
 
 </resources>

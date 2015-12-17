@@ -8,4 +8,108 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- 基本TextView 的样式 -->
+    <style name="TextGray">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/font_gray</item>
+    </style>
+
+    <style name="TextGrayDark">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/font_gray_dark</item>
+    </style>
+
+    <style name="TextBlack">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/font_black</item>
+    </style>
+
+    <style name="TextWhite">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/font_white</item>
+    </style>
+
+    <style name="TextWhite.XSmall" parent="TextWhite">
+        <item name="android:textSize">@dimen/x_small</item>
+    </style>
+
+    <style name="TextWhite.Small" parent="TextWhite">
+        <item name="android:textSize">@dimen/small</item>
+    </style>
+
+    <style name="TextWhite.Normal" parent="TextWhite">
+        <item name="android:textSize">@dimen/normal</item>
+    </style>
+
+    <style name="TextWhite.Large" parent="TextWhite">
+        <item name="android:textSize">@dimen/large</item>
+    </style>
+
+    <style name="TextWhite.XLarge" parent="TextWhite">
+        <item name="android:textSize">@dimen/x_large</item>
+    </style>
+
+    <style name="TextBlack.XSmall" parent="TextBlack">
+        <item name="android:textSize">@dimen/x_small</item>
+    </style>
+
+    <style name="TextBlack.Small" parent="TextBlack">
+        <item name="android:textSize">@dimen/small</item>
+    </style>
+
+    <style name="TextBlack.Normal" parent="TextBlack">
+        <item name="android:textSize">@dimen/normal</item>
+    </style>
+
+    <style name="TextBlack.Large" parent="TextBlack">
+        <item name="android:textSize">@dimen/large</item>
+    </style>
+
+    <style name="TextBlack.XLarge" parent="TextBlack">
+        <item name="android:textSize">@dimen/x_large</item>
+    </style>
+
+    <style name="TextGray.XSmall" parent="TextGray">
+        <item name="android:textSize">@dimen/x_small</item>
+    </style>
+
+    <style name="TextGray.Small" parent="TextGray">
+        <item name="android:textSize">@dimen/small</item>
+    </style>
+
+    <style name="TextGray.Normal" parent="TextGray">
+        <item name="android:textSize">@dimen/normal</item>
+    </style>
+
+    <style name="TextGray.Large" parent="TextGray">
+        <item name="android:textSize">@dimen/large</item>
+    </style>
+
+    <style name="TextGray.XLarge" parent="TextGray">
+        <item name="android:textSize">@dimen/x_large</item>
+    </style>
+    <style name="TextGrayDark.XSmall" parent="TextGrayDark">
+        <item name="android:textSize">@dimen/x_small</item>
+    </style>
+
+    <style name="TextGrayDark.Small" parent="TextGrayDark">
+        <item name="android:textSize">@dimen/small</item>
+    </style>
+
+    <style name="TextGrayDark.Normal" parent="TextGrayDark">
+        <item name="android:textSize">@dimen/normal</item>
+    </style>
+
+    <style name="TextGrayDark.Large" parent="TextGrayDark">
+        <item name="android:textSize">@dimen/large</item>
+    </style>
+
+    <style name="TextGrayDark.XLarge" parent="TextGrayDark">
+        <item name="android:textSize">@dimen/x_large</item>
+    </style>
+
 </resources>

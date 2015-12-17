@@ -8,4 +8,13 @@
     <item name="translation_btn" type="id"/>
     <item name="sentence_btn" type="id"/>
     <item name="video_btn" type="id"/>
+
+    <!-- translation -->
+    <item name="work_edit" type="id"/>
+    <item name="search_btn" type="id"/>
+    <item name="read_btn" type="id"/>
+    <item name="fav_btn" type="id"/>
+    <item name="work_txt" type="id"/>
+    <item name="translation_txt" type="id"/>
+    <item name="web_txt" type="id"/>
 </resources>

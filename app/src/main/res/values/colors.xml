@@ -5,8 +5,20 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- base -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="font_white">@color/white</color>
+    <!-- 字体颜色最浅色的需求上 -->
+    <color name="font_gray_light">#c1c1c1</color>
+    <!-- 灰色字体，三级等字体最灰的一种 -->
+    <color name="font_gray">#9a9595</color>
+    <!-- 暗灰字体，三等级字体中间只用，用在显示内容上 -->
+    <color name="font_gray_dark">#414040</color>
+    <!-- 黑色字体，三等级字体黑字体，用在显示标题等，但有时候标题是使用中间颜色+B -->
+    <color name="font_black">@color/black</color>
+
     <color name="app_theme">#3891bd</color>
-
-
+    <!--<color name="app_theme">#3F51B5</color>-->
 
 </resources>

@@ -1,15 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/separation_xxx_large">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="translation"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@id/work_edit"
+                style="@style/TextGrayDark.Normal"
+                android:layout_width="0dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:hint="请输入需要翻译的单词"
+                android:paddingLeft="@dimen/separation_large"
+                />
+
+            <Button
+                android:id="@id/search_btn"
+                style="@style/TextGrayDark.Large"
+                android:text="@string/translation"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@id/work_txt"
+            style="@style/TextGrayDark.Normal"
+            android:layout_marginTop="@dimen/separation_xx_large"
+            android:text="nice"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="@dimen/separation_normal"
+                android:src="@drawable/selector_read_btn"/>
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_marginLeft="@dimen/separation_normal"
+                android:padding="@dimen/separation_normal"
+                android:src="@drawable/ic_add"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_marginLeft="@dimen/separation_normal"
+                android:padding="@dimen/separation_normal"
+                android:src="@drawable/ic_added"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@id/translation_txt"
+            style="@style/TextGrayDark.Normal"
+            android:lineSpacingMultiplier="1.2"
+            android:text="nice"/>
+
+        <TextView
+            style="@style/TextGrayDark.Normal"
+            android:layout_marginTop="@dimen/separation_normal"
+            android:text="网络释义"
+            android:textColor="@color/app_theme"/>
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="3dp"
+            android:background="@color/app_theme"
+            />
+
+        <TextView
+            android:id="@id/web_txt"
+            style="@style/TextGrayDark.Normal"
+            android:layout_marginTop="@dimen/separation_normal"
+            android:lineSpacingMultiplier="1.2"
+            android:text="nice"/>
+
+
+    </LinearLayout>
+</ScrollView>

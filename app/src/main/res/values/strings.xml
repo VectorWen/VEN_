@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VEN</string>
+    <string name="app_name">每天口语</string>
 
     <!-- 主界面-->
     <string name="bottom_menu_word">单词本</string>
@@ -7,6 +7,15 @@
     <string name="bottom_menu_sentence">句子</string>
     <string name="bottom_menu_video">视频</string>
 
+
+    <!-- 网络模块 -->
+    <string name="network_error">网络出错了，请检查网络设置</string>
+
+
+    <!-- translation -->
+    <string name="translation">翻译</string>
+    <string name="translation_error">翻译出错了</string>
+    <string name="translating">翻译中...</string>
 
 
 </resources>
