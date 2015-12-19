@@ -21,6 +21,7 @@
         android:orientation="horizontal">
 
         <RadioButton
+            style="@style/TextBlack.Normal"
             android:id="@id/word_list_btn"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -31,6 +32,7 @@
             android:text="@string/bottom_menu_word"/>
 
          <RadioButton
+             style="@style/TextBlack.Normal"
              android:id="@id/translation_btn"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -42,6 +44,7 @@
             android:text="@string/bottom_menu_translation"/>
 
          <RadioButton
+             style="@style/TextBlack.Normal"
              android:id="@id/sentence_btn"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -52,6 +55,7 @@
             android:text="@string/bottom_menu_sentence"/>
 
          <RadioButton
+             style="@style/TextBlack.Normal"
              android:id="@id/video_btn"
             android:layout_width="0dp"
             android:layout_weight="1"

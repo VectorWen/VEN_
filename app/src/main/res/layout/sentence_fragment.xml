@@ -1,15 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="sentence"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/separation_x_large"
+        android:paddingRight="@dimen/separation_x_large"
+        android:paddingTop="@dimen/separation_xxx_large">
+
+        <TextView
+            android:id="@id/time_txt"
+            style="@style/TextGray.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="2015-12-19"/>
+
+        <TextView
+            android:id="@id/sentence_txt"
+            style="@style/TextGrayDark.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/separation_normal"
+            android:text="My respect to you family is very sincere."/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/separation_large">
+
+            <ImageButton
+                android:id="@id/video_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="@dimen/separation_normal"
+                android:src="@drawable/selector_read_btn"/>
+
+
+            <ImageButton
+                android:id="@id/add_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/separation_normal"
+                android:background="@null"
+                android:padding="@dimen/separation_normal"
+                android:src="@drawable/ic_add"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@id/sentence_translation_txt"
+            style="@style/TextGrayDark.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/separation_large"
+            android:text="我对贵家族的尊重是非常真诚的。"
+            android:textColor="@color/app_theme_dark"/>
+
+
+        <ImageView
+            android:id="@id/sentence_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/separation_x_large"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_sentence"/>
+
+    </LinearLayout>
+</ScrollView>

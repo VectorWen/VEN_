@@ -56,7 +56,7 @@ public class TeamDownloader {
         public void onResponse(Response response) throws IOException {
             int code = response.code();
             if(code == 200){
-                FileUtils.write2SDFromInput(filePath,fileName,response.body().byteStream());
+                FileUtils.writeFile(filePath,fileName,response.body().byteStream());
                 listener.onOK(0,null);
             }else{
                 listener.onError(0,StatusCode.CODE_UNKNOWN,"");

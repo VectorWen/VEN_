@@ -19,6 +19,6 @@
     <color name="font_black">@color/black</color>
 
     <color name="app_theme">#3891bd</color>
-    <!--<color name="app_theme">#3F51B5</color>-->
+    <color name="app_theme_dark">#4444ee</color>
 
 </resources>

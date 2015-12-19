@@ -19,4 +19,11 @@
     <item name="web_txt" type="id"/>
     <item name="add_btn" type="id"/>
     <item name="remove_btn" type="id"/>
+
+    <!-- sentence-->
+    <item name="time_txt" type="id"/>
+    <item name="sentence_txt" type="id"/>
+    <item name="sentence_translation_txt" type="id"/>
+    <item name="sentence_img" type="id"/>
+
 </resources>

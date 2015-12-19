@@ -4,11 +4,10 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
+import android.util.Log;
 
 import com.vector.ven.constant.Constants;
 import com.vector.ven.util.FileUtils;
-
-import org.litepal.util.Const;
 
 /**
  * 播放音频文件，主要是针对单词音频来写的逻辑
@@ -38,21 +37,30 @@ public class Media {
 	}
 
 	/**
-	 * 播放MP3，先判断是否有sdcard ，在判断文件时候存在
+	 * 播放一个音频文件
+	 *
+	 * @param path
+	 *            要播放的文件 格式 ven/add.mp3
+	 * @return
 	 */
-	public int play(String word){
-		//判断是否有sdcard 卡
-		if(!FileUtils.hasSDCard()){
+	public int play(String path) {
+		if (!FileUtils.hasSDCard()) {
+			return -2;
+		}
+		// 如果文件不存在
+		if (!FileUtils.existes(path)) {
 			return -1;
 		}
 
-		//判断文件是否存在
-		if(!FileUtils.ifFileExist(word+".mp3", "ven")){
-			//下载去
-			return -2;
-		}
+		mediaPlayer = MediaPlayer.create(context,
+				Uri.parse(FileUtils.sSDCardRoot + path));
 
-		mediaPlayer = MediaPlayer.create(context, Uri.parse(rootPath+word+".mp3"));
+		// 当文件是坏的时候
+		if (mediaPlayer == null) {
+			Log.i("ven", FileUtils.sSDCardRoot + path + " 文件损坏");
+			FileUtils.delete(path);
+			return -1;
+		}
 		mediaPlayer.setOnCompletionListener(new CompletionListener(mediaPlayer));
 		mediaPlayer.setLooping(false);
 		mediaPlayer.start();

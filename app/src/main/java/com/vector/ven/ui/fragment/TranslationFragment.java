@@ -48,7 +48,7 @@ public class TranslationFragment extends BaseFragment implements View.OnClickLis
     private boolean mHas; //数据库是否保存了,同样是绑定数据才改变的
 
     private Media mMedia;
-
+    private boolean downloading;
 
     @Nullable
     @Override
@@ -109,16 +109,22 @@ public class TranslationFragment extends BaseFragment implements View.OnClickLis
     }
 
     private void play(){
-        if(!FileUtils.ifFileExist(mYouWord.getQuery()+".mp3", Constants.SYS_PATH)){
+        if(mYouWord == null||downloading){
+            return;
+        }
+        if(!FileUtils.existes(Constants.SYS_PATH+mYouWord.getQuery() + ".mp3")){
+            downloading = true;
             toast("获取发音");
             mModel.downloadAudio(mYouWord.getQuery(), new TeamListener() {
                 @Override
                 public void onOK(int requestCode, String json) {
-                    mMedia.play(mYouWord.getQuery());
+                    downloading = false;
+                    mMedia.play(Constants.SYS_PATH+mYouWord.getQuery() + ".mp3");
                 }
 
                 @Override
                 public void onError(int requestCode, int errorCode, String msg) {
+                    downloading = false;
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -128,7 +134,7 @@ public class TranslationFragment extends BaseFragment implements View.OnClickLis
                 }
             });
         }
-        mMedia.play(mYouWord.getQuery());
+        mMedia.play(Constants.SYS_PATH+mYouWord.getQuery() + ".mp3");
     }
 
     @Override

@@ -1,110 +1,164 @@
 package com.vector.ven.util;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 import android.os.Environment;
 
 /**
- * 一些关于文件的工具方法
+ * 文件工具类
+ * 
  * @author vector
- *
+ * 
  */
 public class FileUtils {
 	/**
-	 * sdcard 的根目录 
+	 * sdcard 根目录
 	 */
 	public static String sSDCardRoot = "";
-	/**
-	 * 初始化一些东西
-	 */
+
 	static {
-		// 得到当前文件外部存储目录
-		sSDCardRoot = Environment.getExternalStorageDirectory()+File.separator;
+		sSDCardRoot = Environment.getExternalStorageDirectory() + File.separator;
 	}
-	
+
 	/**
 	 * 不能实例化
 	 */
-	private FileUtils(){}
-	
+	private FileUtils() {
+	}
+
 	/**
-	 * 在SD卡上创建文件
-	 * @param fileName  要创建的文件名
-	 * @param dir      要创建文件的目录
+	 * 创建一级或多级目录
+	 * 
+	 * @param dir
+	 *            格式 dir/dir1/dir
+	 * @return true 如果创建了必要的目录或目标目录已经存在，目录一定有了
+	 *         <p>
+	 *         false 如果不能创建目录。
+	 */
+	public static boolean createDir(String dir) {
+		File dirFile = new File(sSDCardRoot + dir + File.separator);
+		if (existes(dir)) {
+			return true;
+		}
+		return dirFile.mkdirs();
+	}
+
+	/**
+	 * 删除文件，或文件夹以及文件夹里面全部文件
+	 * 
+	 * @param file
+	 * @return true 如果删除成功或者目标文件不存在，文件一定不存在了
+	 *         <p>
+	 *         false 如果删除失败。
+	 */
+	public static boolean delete(File file) {
+
+		if (!file.exists()) {
+			return true;
+		}
+
+		if (file.isFile()) {
+			return file.delete();
+		}
+
+		if (file.isDirectory()) {
+			File[] childFiles = file.listFiles();
+			if (childFiles == null || childFiles.length == 0) {
+				return file.delete();
+			}
+
+			for (int i = 0; i < childFiles.length; i++) {
+				delete(childFiles[i]);
+			}
+		}
+		return file.delete();
+	}
+
+	/**
+	 * 删除文件，或文件夹以及文件夹里面全部文件
+	 * 
+	 * @param path
+	 *            格式 dir/dir1
+	 *            <p>
+	 *            dir/dir/file.jpg
+	 * @return true 如果删除成功或者目标文件不存在，文件一定不存在了
+	 *         <p>
+	 *         false 如果删除失败。
+	 */
+	public static boolean delete(String path) {
+		return delete(new File(sSDCardRoot + path));
+	}
+
+	/**
+	 * 判断一个文件、或文件夹是否存在
+	 * 
+	 * @param path  ven/  ven/namefile.txt
+	 * @return
+	 */
+	public static boolean existes(String path) {
+		File file = new File(sSDCardRoot + path);
+		return file.exists();
+	}
+
+	/**
+	 * 创建文件，如果目录不存在会先创建目录
+	 * 
+	 * @param fileName
+	 *            要创建的文件
+	 * @param dir
+	 *            所在的目录
 	 * @return
 	 * @throws IOException
 	 */
-	public static  File createFileInSDCard(String fileName, String dir)
+	public static File createFile(String fileName, String dir)
 			throws IOException {
+		File dirFile = new File(sSDCardRoot + dir);
+		if (!dirFile.exists()) {
+			createDir(dir);
+		}
 		File file = new File(sSDCardRoot + dir + File.separator + fileName);
 		file.createNewFile();
 		return file;
 	}
 
 	/**
-	 * 在SD卡上创建目录
-	 * @param dir
-	 * @return
-	 * @throws IOException
-	 */
-	public static  File createSDDir(String dir) throws IOException {
-		File dirFile = new File(sSDCardRoot + dir + File.separator);
-		dirFile.mkdirs();
-		return dirFile;
-	}
-	
-	/**
-	 * 判断sdcard 时候存在
+	 * 判断是否有sdcard
+	 * 
 	 * @return
 	 */
-	public static boolean hasSDCard(){
-		if(sSDCardRoot !=null&&!"".equals(sSDCardRoot)){
+	public static boolean hasSDCard() {
+		if (sSDCardRoot != null && !"".equals(sSDCardRoot)) {
 			return true;
 		}
 		return false;
 	}
 
 	/**
-	 * 判断SD卡上的文件夹或文件是否存在
-	 * @param fileName
-	 * @param path
-	 * @return
-	 */
-	public static  boolean ifFileExist(String fileName, String path) {
-		File file = new File(sSDCardRoot + path + File.separator + fileName);
-		return file.exists();
-	}
-
-	/**
-	 * 把InputStream里面的数据写进SD卡里面
+	 * 写文件，路径和文件如果没有就新创建，如果有就覆盖
 	 * 
 	 * @param path
-	 *            --放文件的路径
+	 *            目录  ven/video/
 	 * @param fileName
-	 *            --文件的名字
+	 *            文件名
 	 * @param input
-	 *            --就是这里面的数据写进SD卡中
+	 *            输入流，不关闭这个流
 	 */
-	public static  File write2SDFromInput(String path, String fileName,
-			InputStream input) {
+	public static File writeFile(String path, String fileName, InputStream input) {
 		File file = null;
 		OutputStream output = null;
 		try {
-			// 创建目录，有了就算是打开
-			createSDDir(path);
-			// 生成文件，
-			file = createFileInSDCard(fileName, path);
-			// 把管道插入新生成的文中，准备往里面写数据
+			file = createFile(fileName, path);
 			output = new FileOutputStream(file);
 			byte[] buffer = new byte[4 * 1024];
 			int temp;
 
-			// 开始读写数据
-			// read(b)是乱写点数据进去，不知道多少个的，
 			while ((temp = input.read(buffer)) != -1) {
 				output.write(buffer, 0, temp);
 			}
@@ -122,22 +176,96 @@ public class FileUtils {
 	}
 
 	/**
-	 * 读取目录中的MP3文件的名字和大小
+	 * 把字节数组的数据写进文件中，如果没有这个文件或路径，就新建
+	 * 
+	 * @param fileName
+	 * @param path
+	 * @param data
+	 * @return
 	 */
-//	public static  List<Mp3Info> getMp3Files(String path) {
-//		List<Mp3Info> mp3Infos = new ArrayList<Mp3Info>();
-//		File file = new File(sSDCardRoot + path);
-//		File[] files = file.listFiles();
-//		for (int i = 0; i < files.length; i++) {
-//			if (files[i].getName().endsWith("mp3")) {
-//				Mp3Info mp3Info = new Mp3Info();
-//				mp3Info.setMp3name(files[i].getName());
-//				mp3Info.setMp3Size(files[i].length() + "");
-//				mp3Infos.add(mp3Info);
-//			}
-//		}
-//
-//		return mp3Infos;
-//	}
+	public static boolean writeFile(String path, String fileName, byte[] data) {
+		FileOutputStream fos = null;
+		File file = null;
+		try {
+			file = createFile(fileName, path);
+			fos = new FileOutputStream(file);
+			fos.write(data);
+			fos.flush();
+		} catch (Exception e) {
+			return false;
+		} finally {
+			try {
+				if (fos != null)
+					fos.close();
+			} catch (IOException e1) {
+				return false;
+			}
+		}
 
+		return true;
+
+	}
+	/**
+	 * 判断一个文件是的内容是否为空
+	 * @param pathName  ven/video/1.1.1.json
+	 * @return 如果文件不存在，或者文件的内容为空，return true，如果文件含有数据，返回false
+	 */
+	public static boolean isEmpty(String pathName){
+		
+		boolean flag = true;
+		File file = new File(sSDCardRoot + pathName);
+		try{
+			InputStream input = new FileInputStream(file);
+		
+			int isEmp = input.read();
+			if(isEmp == -1){
+				//说明是空的
+				flag =  true;
+			}else{
+				flag = false;
+			}
+			input.close();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		
+		return flag;
+	}
+	/**
+	 * 读取文件，以字符串的形式返回
+	 * @param path ven/ ven/namefile.txt
+	 * @return
+	 */
+	public static String read(String path){
+		if(!existes(path)){
+			return null;
+		}
+		
+		StringBuffer sb = new StringBuffer();
+		
+		File file = new File(FileUtils.sSDCardRoot + path);
+		InputStream input = null;
+		BufferedReader reader = null;
+		try {
+			input = new FileInputStream(file);
+			reader = new BufferedReader(new InputStreamReader(input));
+			String line;
+			
+			if((line = reader.readLine())!=null){
+				sb.append(line);
+				System.out.println(1);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				input.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return sb.toString();
+	}
+	
 }
