@@ -43,6 +43,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:id="@id/video_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -51,20 +52,13 @@
 
 
             <ImageButton
+                android:id="@id/add_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:layout_marginLeft="@dimen/separation_normal"
                 android:padding="@dimen/separation_normal"
                 android:src="@drawable/ic_add"/>
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:layout_marginLeft="@dimen/separation_normal"
-                android:padding="@dimen/separation_normal"
-                android:src="@drawable/ic_added"/>
 
         </LinearLayout>
 

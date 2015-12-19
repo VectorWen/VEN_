@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mFragments.add(new VideoFragment());
         mAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager(),mFragments);
         mViewPager.setAdapter(mAdapter);
+        mViewPager.setCurrentItem(1);
         mViewPager.addOnPageChangeListener(this);
         mRadioGroup.setOnCheckedChangeListener(this);
     }

@@ -77,6 +77,16 @@ public class YouWord {
         private String ukPhonetic;//音标
         @SerializedName("us-phonetic")
         private String usPhonetic;//音标
+        private String phonetic;//音标
+
+
+        public String getPhonetic() {
+            return phonetic;
+        }
+
+        public void setPhonetic(String phonetic) {
+            this.phonetic = phonetic;
+        }
 
         private String[] explains;//翻译
 

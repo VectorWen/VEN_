@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">每天口语</string>
 
+    <!-- 错误提示 -->
+    <string name="request_update">上帝把将临临在你手机上，而我出错了（-_-）</string>
+
     <!-- 主界面-->
     <string name="bottom_menu_word">单词本</string>
     <string name="bottom_menu_translation">翻译</string>

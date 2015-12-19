@@ -10,11 +10,11 @@ import com.vector.ven.network.TeamUrl;
  * Date: 2015/12/17
  * Description:<p>{TODO: 用一句话描述}
  */
-public class TranslationManager {
+public class TranslationAPI {
 
     private Team mTeam;
 
-    public TranslationManager() {
+    public TranslationAPI() {
         mTeam = new Team();
     }
 

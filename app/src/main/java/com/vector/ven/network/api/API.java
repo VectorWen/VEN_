@@ -13,4 +13,9 @@ public class API {
      */
     public static final String TRANSLATION = "http://fanyi.youdao.com/openapi.do";
 
+    /**
+     *
+     */
+    public static final String BAIDU_AUDIO = "http://tts.baidu.com/text2audio";
+
 }

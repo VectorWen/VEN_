@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="ven" />
+    <version value="1" />
+    <list>
+
+        <!-- 单词表-->
+        <mapping class="com.vector.ven.table.Word"/>
+
+    </list>
+</litepal>
