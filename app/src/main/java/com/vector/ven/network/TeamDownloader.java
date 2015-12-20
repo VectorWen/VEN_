@@ -35,6 +35,14 @@ public class TeamDownloader {
         mHttpClient.newCall(request).enqueue(new DownloadCallback(filePath,fileName, listener));
     }
 
+    public void download(TeamUrl url, Callback callback) {
+        Request request = new Request.Builder()
+                .url(url.getHttpUrl())
+                .build();
+        mHttpClient.newCall(request).enqueue(callback);
+    }
+
+
     private class DownloadCallback implements Callback {
 
         private String filePath;

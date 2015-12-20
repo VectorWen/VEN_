@@ -13,5 +13,6 @@ public class Constants {
     public static final String SYS_PATH = "ven/";
     public static final String SYS_PATH_IMAGE = FileUtils.sSDCardRoot+"ven/images/";
     public static final String SYS_PATH_SENTENCE = FileUtils.sSDCardRoot+"ven/sentence/";
+    public static final String SYS_PATH_VIDEO = "ven/video/";
 
 }

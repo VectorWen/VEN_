@@ -46,9 +46,4 @@ public class MainFragmentPagerAdapter extends FragmentPagerAdapter {
         return mFragments == null ? 0 : mFragments.size();
     }
 
-    //不销毁任务Fragment
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-
-    }
 }

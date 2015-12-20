@@ -26,4 +26,12 @@
     <item name="sentence_translation_txt" type="id"/>
     <item name="sentence_img" type="id"/>
 
+    <!-- video-->
+    <item name="download_btn" type="id"/>
+    <item name="download_image" type="id"/>
+    <item name="progress_bar" type="id"/>
+    <item name="cur_length" type="id"/>
+    <item name="content_length" type="id"/>
+
+
 </resources>
