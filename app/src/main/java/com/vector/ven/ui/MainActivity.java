@@ -21,7 +21,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
+public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener
 ,RadioGroup.OnCheckedChangeListener{
 
     @Bind(R.id.view_pager) ViewPager mViewPager;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(1);
         mViewPager.addOnPageChangeListener(this);
+        mViewPager.setOffscreenPageLimit(4);
         mRadioGroup.setOnCheckedChangeListener(this);
     }
 

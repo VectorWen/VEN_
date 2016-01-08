@@ -11,6 +11,7 @@ import com.vector.ven.table.Word;
 
 import org.litepal.crud.DataSupport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,6 +28,15 @@ public class WordModel {
     public WordModel() {
         mTranslation = new TranslationAPI();
         mDownloader = new TeamDownloader();
+    }
+
+    public List<YouWord> query(int page) {
+        List<Word> words = DataSupport.findAll(Word.class);
+        List<YouWord> youWords = new ArrayList<>(words.size());
+        for (Word word : words) {
+            youWords.add(YouWord.createByJson(word.getJson()));
+        }
+        return youWords;
     }
 
     public void downloadAudio(String query, TeamListener listener) {
@@ -49,7 +59,7 @@ public class WordModel {
                 .add("ie", "UTF-8")
                 .add("text", query)
                 .add("spd", "2");
-        mDownloader.download(url, Constants.SYS_PATH,query+".mp3",listener);
+        mDownloader.download(url, Constants.SYS_PATH, query + ".mp3", listener);
     }
 
     /**

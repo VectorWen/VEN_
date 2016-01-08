@@ -28,10 +28,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".ui.ShowFragmentActivity"/>
 
         <service
-            android:name=".service.DownloadService"
-            >
+            android:name=".service.DownloadService">
             <intent-filter>
                 <action android:name="com.vector.ven.action.DOWNLOAD"/>
             </intent-filter>

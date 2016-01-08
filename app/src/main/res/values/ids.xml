@@ -32,6 +32,10 @@
     <item name="progress_bar" type="id"/>
     <item name="cur_length" type="id"/>
     <item name="content_length" type="id"/>
+    <item name="video_view" type="id"/>
+
+    <!--test-->
+    <item name="test_image_view" type="id"/>
 
 
 </resources>

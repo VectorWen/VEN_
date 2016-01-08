@@ -81,7 +81,7 @@ public class Media {
 		}
 		@Override
 		public void onCompletion(MediaPlayer mp) {
-			if(playCount<3){
+			if(playCount<1){
 				try {
 					Thread.sleep(500);
 				} catch (InterruptedException e) {

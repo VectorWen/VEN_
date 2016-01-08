@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@id/work_txt"
+        android:layout_marginTop="4dp"
+        style="@style/TextGrayDark.Normal"
+        android:text="nice"/>
+
+    <TextView
+        android:id="@id/translation_txt"
+        style="@style/TextGrayDark.Normal"
+        android:layout_below="@+id/work_txt"
+        android:layout_marginTop="5dp"
+        android:lineSpacingMultiplier="1.2"
+        android:text="nice"/>
+
+    <ImageButton
+        android:id="@id/video_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/work_txt"
+        android:padding="@dimen/separation_normal"
+        android:src="@drawable/selector_read_btn"/>
+
+
+</RelativeLayout>
