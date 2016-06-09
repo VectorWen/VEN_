@@ -58,6 +58,7 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener 
         mViewHolder = new ViewHolder(mParent);
         //绑定Service
         Intent intent = new Intent("com.vector.ven.action.DOWNLOAD");
+        intent.setPackage(getActivity().getPackageName());
         getActivity().bindService(intent, new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {

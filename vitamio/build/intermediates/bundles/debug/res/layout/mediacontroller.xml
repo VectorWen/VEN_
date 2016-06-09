@@ -59,4 +59,4 @@
         android:ellipsize="marquee"
         android:singleLine="true" />
 
-</LinearLayout><!-- From: file:/D:/androidStudioPro/VEN_/vitamio/res/layout/mediacontroller.xml -->
+</LinearLayout>
