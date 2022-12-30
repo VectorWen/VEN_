@@ -12,6 +12,8 @@ import java.io.OutputStream;
 import android.os.Environment;
 import android.util.Log;
 
+import com.vector.ven.application.App;
+
 /**
  * 文件工具类
  *
@@ -23,8 +25,8 @@ public class FileUtils {
      */
     public static String sSDCardRoot = "";
 
-    static {
-        sSDCardRoot = Environment.getExternalStorageDirectory() + File.separator;
+    public static void init(){
+        sSDCardRoot = App.mInstance.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
     }
 
     /**

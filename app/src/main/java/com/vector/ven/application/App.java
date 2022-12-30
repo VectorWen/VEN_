@@ -1,6 +1,7 @@
 package com.vector.ven.application;
 
 import com.vector.ven.network.TImageLoader;
+import com.vector.ven.util.FileUtils;
 
 import org.litepal.LitePalApplication;
 
@@ -20,5 +21,6 @@ public class App extends LitePalApplication {
         mInstance = this;
 
         TImageLoader.init(this);
+        FileUtils.init();
     }
 }

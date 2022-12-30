@@ -54,6 +54,7 @@ public class WordModel {
             lan = "zh";
         }
 
+        // ?lan=en&text=good&spd=3&source=web
         url.add("lan", lan)
                 .add("pid", "101")
                 .add("ie", "UTF-8")

@@ -15,8 +15,9 @@ public class API {
 
     /**
      * 百度tts ，获取单词的读音
+     * https://fanyi.baidu.com/gettts?lan=en&text=good&spd=3&source=web
      */
-    public static final String BAIDU_AUDIO = "http://tts.baidu.com/text2audio";
+    public static final String BAIDU_AUDIO = "https://fanyi.baidu.com/gettts";
 
      /**
      * 词霸的每天一句

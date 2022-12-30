@@ -10,10 +10,10 @@ import com.vector.ven.util.FileUtils;
  */
 public class Constants {
 
-    public static final String SYS_PATH = "ven/";
-    public static final String SYS_PATH_IMAGE = FileUtils.sSDCardRoot+"ven/images/";
-    public static final String SYS_PATH_VEN_IMAGE = FileUtils.sSDCardRoot+"ven/ven_images/";
-    public static final String SYS_PATH_SENTENCE = FileUtils.sSDCardRoot+"ven/sentence/";
-    public static final String SYS_PATH_VIDEO = "ven/video/";
+    public static final String SYS_PATH = FileUtils.sSDCardRoot + "/ven/";
+    public static final String SYS_PATH_IMAGE = FileUtils.sSDCardRoot + "/images/";
+    public static final String SYS_PATH_VEN_IMAGE = FileUtils.sSDCardRoot + "/ven_images/";
+    public static final String SYS_PATH_SENTENCE = FileUtils.sSDCardRoot + "/sentence/";
+    public static final String SYS_PATH_VIDEO = FileUtils.sSDCardRoot + "/ven/video/";
 
 }
