@@ -1,7 +1,7 @@
 package com.vector.ven.ui.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,7 @@ import com.vector.ven.model.WordModel;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -61,7 +61,7 @@ public class WordListFragment extends BaseFragment{
     }
 
     class ViewHolder{
-        @Bind(R.id.pull_list_view)  PullToRefreshListView mPullListView;
+        @BindView(R.id.pull_list_view)  PullToRefreshListView mPullListView;
         private View mEmptyView;
         private WordListAdapter mAdapter;
 

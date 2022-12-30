@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +25,7 @@ import com.vector.ven.util.FileUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnLongClick;
 
@@ -149,17 +149,17 @@ public class SentenceFragment extends BaseFragment implements View.OnClickListen
     }
 
     class ViewHolder {
-        @Bind(R.id.time_txt)
+        @BindView(R.id.time_txt)
         TextView mTimeTxt;
-        @Bind(R.id.sentence_txt)
+        @BindView(R.id.sentence_txt)
         TextView mSentenceTxt;
-        @Bind(R.id.video_btn)
+        @BindView(R.id.video_btn)
         ImageButton mVideoBtn;
-        @Bind(R.id.add_btn)
+        @BindView(R.id.add_btn)
         ImageButton mAddBtn;
-        @Bind(R.id.sentence_translation_txt)
+        @BindView(R.id.sentence_translation_txt)
         TextView mSentenceTranslationTxt;
-        @Bind(R.id.sentence_img)
+        @BindView(R.id.sentence_img)
         ImageView mSentenceImg;
 
         Sentence mSentence;

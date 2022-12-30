@@ -9,10 +9,9 @@ package com.vector.ven.adapter;
  * Description:<p>{TODO: 用一句话描述}
  */
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.vector.ven.logger.Logger;
 

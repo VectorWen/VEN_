@@ -4,27 +4,22 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import com.vector.ven.event.ProgressChangedEvent;
 import com.vector.ven.logger.Logger;
-import com.vector.ven.network.StatusCode;
 import com.vector.ven.network.TeamDownloader;
-import com.vector.ven.network.TeamListener;
 import com.vector.ven.network.TeamUrl;
 import com.vector.ven.util.FileUtils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Author: vector.huang

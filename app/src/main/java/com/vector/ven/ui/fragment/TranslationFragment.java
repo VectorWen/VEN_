@@ -1,7 +1,7 @@
 package com.vector.ven.ui.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +14,12 @@ import com.vector.ven.constant.Constants;
 import com.vector.ven.entity.YouWord;
 import com.vector.ven.media.Media;
 import com.vector.ven.model.WordModel;
-import com.vector.ven.network.TeamDownloader;
 import com.vector.ven.network.TeamListener;
-import com.vector.ven.network.api.TranslationAPI;
-import com.vector.ven.table.Word;
 import com.vector.ven.util.FileUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -183,19 +180,19 @@ public class TranslationFragment extends BaseFragment implements View.OnClickLis
     }
 
     class ViewHolder {
-        @Bind(R.id.work_edit)
+        @BindView(R.id.work_edit)
         EditText mWorkEdit;
-        @Bind(R.id.search_btn)
+        @BindView(R.id.search_btn)
         TextView mSearchBtn;
-        @Bind(R.id.work_txt)
+        @BindView(R.id.work_txt)
         TextView mWorkTxt;
-        @Bind(R.id.translation_txt)
+        @BindView(R.id.translation_txt)
         TextView mTranslationTxt;
-        @Bind(R.id.web_txt)
+        @BindView(R.id.web_txt)
         TextView mWebTxt;
-        @Bind(R.id.add_btn)
+        @BindView(R.id.add_btn)
         ImageButton mAddBtn;
-        @Bind(R.id.video_btn)
+        @BindView(R.id.video_btn)
         ImageButton mVideoBtn;
 
         ViewHolder(View view) {

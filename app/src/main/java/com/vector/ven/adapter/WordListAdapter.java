@@ -18,7 +18,7 @@ import com.vector.ven.util.FileUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -76,11 +76,11 @@ public class WordListAdapter extends BaseAdapter {
 
 
     class ViewHolder implements View.OnClickListener {
-        @Bind(R.id.work_txt)
+        @BindView(R.id.work_txt)
         TextView mWorkTxt;
-        @Bind(R.id.translation_txt)
+        @BindView(R.id.translation_txt)
         TextView mTranslationTxt;
-        @Bind(R.id.video_btn)
+        @BindView(R.id.video_btn)
         View mVideoBtn;
         YouWord mYouWord;
 

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,14 +15,12 @@
         android:paddingTop="@dimen/separation_xxx_large"
         >
 
-        <com.daimajia.numberprogressbar.NumberProgressBar
+        <TextView
             android:id="@id/progress_bar"
-            style="@style/NumberProgressBar_Default"
-            app:progress="20"
-            app:progress_reached_color="@color/app_theme"
-            app:progress_text_size="@dimen/small"
-            app:progress_text_visibility="invisible"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="进度"/>
 
         <LinearLayout
             android:layout_width="match_parent"

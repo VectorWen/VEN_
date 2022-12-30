@@ -1,11 +1,10 @@
 package com.vector.ven.ui;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 
 import com.vector.ven.R;
@@ -18,14 +17,14 @@ import com.vector.ven.ui.fragment.WordListFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener
 ,RadioGroup.OnCheckedChangeListener{
 
-    @Bind(R.id.view_pager) ViewPager mViewPager;
-    @Bind(R.id.radio_group) RadioGroup mRadioGroup;
+    @BindView(R.id.view_pager) ViewPager mViewPager;
+    @BindView(R.id.radio_group) RadioGroup mRadioGroup;
 
     private List<Fragment> mFragments;
     private MainFragmentPagerAdapter mAdapter;

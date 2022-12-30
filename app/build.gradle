@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 31
+    buildToolsVersion "31"
 
     defaultConfig {
         applicationId "com.vector.ven"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion 19
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -20,14 +20,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.squareup.okhttp:okhttp:2.5.0'
-    compile 'org.litepal.android:core:1.3.0'
-    compile 'de.greenrobot:eventbus:2.4.0'
-    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
-    compile project(':vitamio')
-    compile project(':pullToRefresh')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    //资源注解
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    implementation 'com.squareup.okhttp:okhttp:2.5.0'
+    implementation 'org.litepal.android:core:1.3.0'
+    implementation 'de.greenrobot:eventbus:2.4.0'
+    implementation 'com.daimajia.numberprogressbar:library:1.2@aar'
+    implementation project(':vitamio')
+    implementation project(':pullToRefresh')
 }

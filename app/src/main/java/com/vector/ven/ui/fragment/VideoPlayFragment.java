@@ -1,14 +1,14 @@
 package com.vector.ven.ui.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.vector.ven.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.vov.vitamio.Vitamio;
 import io.vov.vitamio.widget.MediaController;
@@ -41,7 +41,7 @@ public class VideoPlayFragment extends BaseFragment {
     }
 
     class ViewHolder{
-        @Bind(R.id.video_view)  VideoView mVideoView;
+        @BindView(R.id.video_view)  VideoView mVideoView;
 
         ViewHolder(View view){
             ButterKnife.bind(this, view);
